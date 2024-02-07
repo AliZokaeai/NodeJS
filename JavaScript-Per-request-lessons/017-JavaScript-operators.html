@@ -6,28 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Operators</title>
 </head>
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+
+<button type="button" onclick="myFunction1()">Sort Alphabetically</button>
+<button type="button" onclick="myFunction2()">Sort Numerically</button>
+<button type="button" onclick="myFunction3()">Sort randomly</button>
+<button type="button" onclick="myFunction4()">Sort Fisher Yates</button>
 
 <body>
-    <h1>JavaScript Operators</h1>
-    <h2>The assigment (=) Oeprators</h2>
-    <p id="operator"></p>
-
     <script>
-        let z = 5;
-        let y = 2;
-        z += 5;
-        document.getElementById("operator").innerHTML = "The sum of x + y is :" + z;
-    </script>
-    <hr>
+        const points = [40, 100, 1, 5, 25, 10];
+        document.getElementById("demo").innerHTML = points;
 
-    <h1>JavaScript string operator</h1>
-    <p> All conditional operator can be used on both number and string.</p>
-    <p id="textCompersion"></p>
-    <script>
-        let text1 = "A";
-        let text2 = "B";
-        let result = text1 < text2;
-        document.getElementById("textCompersion").innerHTML = "Is a less than B? " + result;
+        function myFunction1() {
+            points.sort();
+            document.getElementById("demo1").innerHTML = points;
+        }
+
+        function myFunction2() {
+            points.sort(function (a, b) { return b - a });
+            document.getElementById("demo2").innerHTML = points;
+        }
+        function myFunction3() {
+            points.sort(function () { return 0.5 - Math.random() });
+            document.getElementById("demo3").innerHTML = points;
+        }
+        let steps = "<ul>"
+        function myFunction4() {
+            for (let i = points.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+
+                let k = points[i];
+
+                points[i] = points[j];
+                steps += "<li> j=" + j + " i=" + i + " k=" + points[i] + " Point[j]=" + points[j] + " </li>"
+                points[j] = k;
+            }
+            steps += "</ul>"
+            document.getElementById("demo4").innerHTML = points + steps;
+        }
     </script>
 </body>
 
