@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the lowest value</title>
+</head>
+
+<body>
+    <p>The lowst value is: <span id="minmum"></span> and largest value is: <span id="maximum"></span></p>
+
+    <script>
+        const points = [40, 100, 1, 5, 25, 10];
+        // points.sort(function (a, b) { return a - b });
+        // document.getElementById("minmum").innerHTML = points[0];
+        // document.getElementById("maximum").innerHTML = points[points.length - 1];
+
+        //document.getElementById("minmum").innerHTML = myArrayMin(points);
+        // document.getElementById("maximum").innerHTML = myArrayMax(points);
+        // function myArrayMin(arr) {
+        //     return Math.min.apply(null, arr);
+        // }
+
+        // function myArrayMax(arr) {
+        //     return Math.max.apply(null, arr);
+        // }
+
+
+        document.getElementById("minmum").innerHTML = myArrayMin(points);
+        document.getElementById("maximum").innerHTML = myArrayMax(points);
+
+
+        function myArrayMin(arr) {
+            let len = arr.length;
+            let min = Infinity;
+            while (len--) {
+                if (arr[len] < min) {
+                    min = arr[len];
+                }
+            }
+            return min;
+        }
+
+        function myArrayMax(arr) {
+            let len = arr.length;
+            let max = -Infinity;
+            while (len--) {
+                if (arr[len] > max) {
+                    max = arr[len];
+                }
+            }
+            return max;
+        }
+    </script>
+</body>
+
+</html>
