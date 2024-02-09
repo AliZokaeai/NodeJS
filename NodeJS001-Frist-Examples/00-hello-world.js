@@ -1,3 +1,5 @@
-require('http')
-.createServer((req, res)=>res.end('hello world'))
-.listen(8080)
+console.log(Math.sign(-4));
+console.log(Math.sign(0));
+console.log(Math.sign(4));
+
+

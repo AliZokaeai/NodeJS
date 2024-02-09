@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What can do JavaScritp part 2</title>
+</head>
+
+<body>
+    <h2>JavaScript Date Object</h2>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+
+    <script>
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+        const d = new Date();
+        const d1 = new Date();
+        const d2 = new Date();
+        const d3 = new Date();
+        const d4 = new Date("2021-03-25");
+        const d5 = new Date();
+        document.getElementById("demo").innerHTML = d.getFullYear();
+        document.getElementById("demo1").innerHTML = months[d1.getMonth()];
+        document.getElementById("demo2").innerHTML = d2.getDate();
+        document.getElementById("demo3").innerHTML = d3.getHours();
+        document.getElementById("demo4").innerHTML = Date.now();
+        document.getElementById("demo4").innerHTML = days[d5.getDay()];
+    </script>
+</body>
+
+</html>
