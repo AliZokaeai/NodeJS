@@ -8,7 +8,29 @@
 </head>
 
 <body>
-    
+    <h2>JavaScript is my love</h2>
+
+
+    <ul id="demo"></ul>
+
+
+
+    <script>
+        const person = { fname: "John", lname: "Doe", age: 25 };
+        let txt = "";
+        for (let x in person) {
+            if (x = person.fname) {
+                txt += "your first name is: " + x;
+            }else if (x = person.lname){
+                txt += "your last name is: "+x;
+            }else if(x = person.age){
+                
+            }
+        }
+
+        document.getElementById("demo").innerHTML = txt;
+    </script>
+
 </body>
 
 </html>
